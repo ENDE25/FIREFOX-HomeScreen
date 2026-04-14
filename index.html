@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main>
+    <header>
+      <div class="clock" id="clock"></div>
+      <div class="date" id="date"></div>
+      <div class="search-area">
+        <form class="search-form" id="web-search-form">
+          <input type="text" id="web-search-input" placeholder="Search the web..." autocomplete="off" />
+        </form>
+        <form class="search-form ai-search-form" id="ai-search-form">
+          <input type="text" id="ai-search-input" placeholder="Ask Claude..." autocomplete="off" />
+        </form>
+      </div>
+      <div class="ai-shortcuts" id="ai-shortcuts"></div>
+    </header>
+
+    <section class="workspaces-section">
+      <div class="workspaces-row" id="workspaces-row">
+        <!-- columns rendered by app.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal add / edit link -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <h2 id="modal-title">New link</h2>
+      <form id="link-form">
+        <input type="hidden" id="edit-link-id" />
+        <input type="hidden" id="edit-ws-id" />
+        <label>
+          Name
+          <input type="text" id="input-name" placeholder="GitHub" required />
+        </label>
+        <label>
+          URL
+          <input type="url" id="input-url" placeholder="https://github.com" required />
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" id="cancel-btn">Cancel</button>
+          <button type="submit" class="btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Settings button -->
+  <button class="settings-btn" id="settings-btn" title="Settings">⚙</button>
+
+  <!-- Settings panel -->
+  <div class="settings-overlay" id="settings-overlay"></div>
+  <aside class="settings-panel" id="settings-panel">
+    <div class="settings-header">
+      <span>Settings</span>
+      <button class="settings-close" id="settings-close">✕</button>
+    </div>
+
+    <section class="settings-section">
+      <h3>Search</h3>
+      <div class="search-setting-group">
+        <p class="search-setting-label">Web engine</p>
+        <div class="search-presets" id="engine-presets">
+          <button type="button" data-name="Google"     data-url="https://www.google.com/search?q={q}">Google</button>
+          <button type="button" data-name="DuckDuckGo" data-url="https://duckduckgo.com/?q={q}">DuckDuckGo</button>
+          <button type="button" data-name="Bing"       data-url="https://www.bing.com/search?q={q}">Bing</button>
+        </div>
+        <input type="text" id="engine-url-input" placeholder="https://...?q={q}" />
+      </div>
+      <div class="search-setting-group">
+        <p class="search-setting-label">AI assistant</p>
+        <div class="search-presets" id="ai-presets">
+          <button type="button" data-name="Claude"   data-url="https://claude.ai/new?q={q}">Claude</button>
+          <button type="button" data-name="ChatGPT"  data-url="https://chatgpt.com/?q={q}">ChatGPT</button>
+          <button type="button" data-name="Gemini"   data-url="https://gemini.google.com/search?q={q}">Gemini</button>
+          <button type="button" data-name="DeepSeek" data-url="https://chat.deepseek.com/?q={q}">DeepSeek</button>
+        </div>
+        <input type="text" id="ai-url-input" placeholder="https://...?q={q}" />
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h3>General</h3>
+      <label class="toggle-row">
+        <span>Show clock</span>
+        <input type="checkbox" id="toggle-clock" checked />
+      </label>
+      <label class="toggle-row">
+        <span>Web search bar</span>
+        <input type="checkbox" id="toggle-web-search" checked />
+      </label>
+      <label class="toggle-row">
+        <span>AI search bar</span>
+        <input type="checkbox" id="toggle-ai-search" checked />
+      </label>
+    </section>
+
+    <section class="settings-section">
+      <h3>Workspaces</h3>
+      <button class="add-ws-btn" id="add-ws-btn">+ Add workspace</button>
+    </section>
+
+    <section class="settings-section">
+      <h3>AI Shortcuts</h3>
+      <div id="ai-settings-list"></div>
+      <form id="ai-add-form">
+        <input type="text" id="ai-add-name" placeholder="Name" required />
+        <input type="url" id="ai-add-url"  placeholder="https://..." required />
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <section class="settings-section">
+      <h3>Wallpaper</h3>
+      <div class="wallpaper-row">
+        <label class="wallpaper-upload-btn">
+          Upload image
+          <input type="file" id="wallpaper-input" accept="image/*" hidden />
+        </label>
+        <button class="wallpaper-clear-btn" id="wallpaper-clear">Remove</button>
+      </div>
+      <p class="settings-hint" id="wallpaper-hint">No wallpaper set</p>
+    </section>
+
+    <section class="settings-section">
+      <h3>Data</h3>
+      <div class="wallpaper-row">
+        <button class="wallpaper-upload-btn" id="export-btn">Export</button>
+        <label class="wallpaper-upload-btn">
+          Import
+          <input type="file" id="import-input" accept=".json" hidden />
+        </label>
+      </div>
+      <p class="settings-hint" id="import-hint"></p>
+    </section>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
