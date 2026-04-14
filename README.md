@@ -12,7 +12,7 @@ Available for Firefox soon. Right now it can be installed from [this link](https
 
 ### Workspaces
 
-Organize your bookmarks into named columns, each with its own color label. You can create as many workspaces as you need, rename them inline, and reorder them by dragging. Links within each workspace are sorted automatically by how often you click them — the most-used links rise to the top over time.
+Organize your bookmarks into named columns, each with its own color label. You can create as many workspaces as you need, rename them inline, and reorder them by dragging. Links within each workspace are sorted automatically by how often you click them; the most-used links rise to the top over time.
 
 ### Web and AI search
 
@@ -41,7 +41,7 @@ Open with the gear icon in the bottom-right corner. From here you can:
 
 ### Export and import
 
-All your data — workspaces, links, shortcuts, search settings, and wallpaper — can be exported to a single JSON file and imported back at any time. Useful for backups or migrating between browsers.
+All your data: workspaces, links, shortcuts, search settings, and wallpaper can be exported to a single JSON file and imported back at any time. Useful for backups or migrating between browsers.
 
 ---
 
