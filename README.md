@@ -2,7 +2,7 @@
 
 A browser extension that replaces the new tab page with a clean, customizable dashboard. Built with vanilla HTML, CSS, and JavaScript — no dependencies, no build step.
 
-Available for Firefox soon. Right now it can be installed from ![This Link|https://addons.mozilla.org/firefox/downloads/file/4765378/7c58e3dbbd11477ca6ae-1.0.xpi]
+Available for Firefox soon. Right now it can be installed from [https://addons.mozilla.org/firefox/downloads/file/4765378/7c58e3dbbd11477ca6ae-1.0.xpi](this link)
 
 <img width="1844" height="971" alt="image" src="https://github.com/user-attachments/assets/c56e4432-9d7f-43da-ac4b-8f3881b87530" />
 
